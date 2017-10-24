@@ -1,24 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-table, th, td {
-  border: 3px solid black;
-  border-collapse: collapse;
-}
-.cell {
-  width:80px;
-  height:80px;
-  background: #FFFFFF;
-  font-size: 46pt;
-  font-family: arial;
-  font-weight: bold;
-  text-align: center;
-  margin: auto;
-
-}
-
-</style>
 <SCRIPT TYPE="TEXT/JAVASCRIPT">
 // Global Varibles
 var xTurn = true;
@@ -792,37 +774,37 @@ function squareclicked(square) // square is a button object
 <BR>
 <INPUT TYPE="BUTTON" ID="NEWGAME" VALUE="New Game" ONCLICK="newgame();">
 <p>
-<table>
+<table border="1" style="background-color:#FFD16A;">
 <tr>
-<td class="cell">
+<td width="22">
 <INPUT TYPE="BUTTON" ID="0_0" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
-<td class="cell">
+<td width="22">
 <INPUT TYPE="BUTTON" ID="0_1" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
-<td class="cell">
+<td width="22">
 <INPUT TYPE="BUTTON" ID="0_2" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
 </tr>
 <tr>
-<td class="cell">
+<td>
 <INPUT TYPE="BUTTON" ID="1_0" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
-<td class="cell">
+<td>
 <INPUT TYPE="BUTTON" ID="1_1" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
-<td class="cell">
+<td>
 <INPUT TYPE="BUTTON" ID="1_2" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
 </tr>
 <tr>
-<td class="cell">
+<td>
 <INPUT TYPE="BUTTON" ID="2_0" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
-<td class="cell">
+<td>
 <INPUT TYPE="BUTTON" ID="2_1" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
-<td class="cell">
+<td>
 <INPUT TYPE="BUTTON" ID="2_2" VALUE="  " ONCLICK="squareclicked(this);" style='background:transparent; border:0;'>
 </td>
 </tr>
