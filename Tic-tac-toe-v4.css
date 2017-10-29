@@ -1,0 +1,16 @@
+
+table, th, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+.cell {
+  width:80px;
+  height:80px;
+  background: #FFFFFF;
+  font-size: 46pt;
+  font-family: arial;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+
+}
