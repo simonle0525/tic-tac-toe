@@ -698,9 +698,10 @@ function newgame()
    }
 }
 
-function squareclicked(square) // square is a button object
+function squareclicked(x,y) // square is a button object
 // squareclicked is a function that is called whenever a button is clicked.
 {
+  alert("This is testing. x: " + x + " - y: " + y);
     if(gameOver) //  check global varible if the game is over
     {
         alert("The game is already over.");
