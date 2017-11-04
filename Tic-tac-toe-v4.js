@@ -701,7 +701,6 @@ function newgame()
 function squareclicked(x,y) // square is a button object
 // squareclicked is a function that is called whenever a button is clicked.
 {
-  alert("This is testing. x: " + x + " - y: " + y);
     if(gameOver) //  check global varible if the game is over
     {
         alert("The game is already over.");
@@ -709,7 +708,8 @@ function squareclicked(x,y) // square is a button object
     }
 
     var status = document.getElementById('status');  // get the status object
-    var value = square.value; // get the current square's value
+    //var value = square.value; // get the current square's value
+    var value = document.getElementById(x+"_"+y).innerHTML;
     if(value != 'X' && value != 'O') // check if the current square does not
                                      // have 'X' or 'O'
     {
@@ -720,7 +720,8 @@ function squareclicked(x,y) // square is a button object
                                 // numMoves will become 6
             xTurn = false; // switching to 'O's turn
             status.innerHTML = "O\'s turn"; // displaying O's turn
-            square.value = 'X'; // set this square to 'X'
+            //square.value = 'X'; // set this square to 'X'
+            document.getElementById(x+"_"+y).innerHTML='X';
 
             // computer will make the move for 'O'
             makeOmove();
