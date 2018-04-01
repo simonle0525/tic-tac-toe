@@ -584,15 +584,16 @@ function makeOmove()
         // iterate rows
         for(var x = 0; x < 3; x++)
         {
-            var square = document.getElementById(x+'_'+y).value;
-            if(square == '  ')
+            var square = document.getElementById(x+'_'+y).innerHTML;
+            if(square == '&nbsp;')
             {
                 numMoves = numMoves + 1; // add 1 to numMoves
                                      // ex: if numMoves = 5 then after this execution
                                      // numMoves will become 6
                 xTurn = true; // switching to 'X's turn
                 status.innerHTML = "X\'s turn"; // displaying O's turn
-                document.getElementById(x + '_' + y).value = 'O'; // set this square to 'O'
+                document.getElementById(x + '_' + y).style.color="#E2C290";
+                document.getElementById(x + '_' + y).innerHTML = 'O'; // set this square to 'O'
 
                 return true; // return true to the caller
             }
@@ -693,7 +694,7 @@ function newgame()
    {
       for(var y = 0; y < 3; y++)
       {
-         document.getElementById(x + '_' + y).value = '  ';
+         document.getElementById(x + '_' + y).innerHTML= '&nbsp;';
       }
    }
 }
@@ -707,34 +708,26 @@ function squareclicked(x,y) // square is a button object
         return;
     }
 
-    var status = document.getElementById('status');  // get the status object
+    //var status = document.getElementById('status');  // get the status object
     //var value = square.value; // get the current square's value
-    var value = document.getElementById(x+"_"+y).innerHTML;
-    if(value != 'X' && value != 'O') // check if the current square does not
+    var square = document.getElementById(x+"_"+y).innerHTML;
+    if(square != 'X' && square != 'O') // check if the current square does not
                                      // have 'X' or 'O'
     {
-        if(xTurn) // global varible to keep track X's turn or O's turn
-        {
-            numMoves = numMoves + 1; // add 1 to numMoves
-                                // ex: if numMoves = 5 then after this execution
-                                // numMoves will become 6
-            xTurn = false; // switching to 'O's turn
-            status.innerHTML = "O\'s turn"; // displaying O's turn
-            //square.value = 'X'; // set this square to 'X'
-            document.getElementById(x+"_"+y).innerHTML='X';
+       numMoves = numMoves + 1; // add 1 to numMoves
+                              // ex: if numMoves = 5 then after this execution
+                              // numMoves will become 6
 
-            // computer will make the move for 'O'
-            makeOmove();
-        }
-        else
-        {
-            numMoves = numMoves + 1; // add 1 to numMoves
-                                // ex: if numMoves = 5 then after this execution
-                                // numMoves will become 6
-            xTurn = true; // switching to 'X's turn
-            status.innerHTML = "X\'s turn"; // displaying X's turn
-            square.value = 'O'; // set this square to 'O'
-        }
+        // set this square to 'X'
+        document.getElementById(x+"_"+y).style.color="#3F88C5";
+        document.getElementById(x+"_"+y).innerHTML ='X';
+
+        checkWin(); // call checkWin to see if X wins or tie
+
+        // computer will make the move for 'O'
+        makeOmove();
+
+        checkWin(); // call checkWin to see if O wins or tie
     }
     else
     {
@@ -742,19 +735,19 @@ function squareclicked(x,y) // square is a button object
                                    // notify that the square has been played
     }
 
-    var winner = checkWin(); // call checkWin to see if X or O win or tie
-    if(!winner) // if there is no winner
-    {
+//    var winner = checkWin(); // call checkWin to see if X or O win or tie
+  //  if(!winner) // if there is no winner
+    //{
         //check to see if there is a tie
-        if(numMoves == 9) // if all the square are used
-        {
-            status.innerHTML = 'Tie Game!';
-        }
-    }
-    else
-    {
-        gameOver = true;
-    }
+      //  if(numMoves == 9) // if all the square are used
+        //{
+          //  status.innerHTML = 'Tie Game!';
+        //}
+    //}
+  //  else
+    //{
+      //  gameOver = true;
+  //  }
 
 
 }
